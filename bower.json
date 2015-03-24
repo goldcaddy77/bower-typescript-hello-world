@@ -1,0 +1,22 @@
+{
+  "name": "bower-typescript-hello-world-example",
+  "version": "0.0.0",
+  "authors": [
+    "Dan Caddigan <goldcaddy77@gmail.com>"
+  ],
+  "main": "module/main.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "typescript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".gitignore",
+    "bower.json",
+    "bower_components",
+    "example",
+    "node_modules"
+  ]
+}
