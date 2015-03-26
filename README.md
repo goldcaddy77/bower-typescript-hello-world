@@ -1,2 +1,4 @@
-# bower-typescript-hello-world
-Bower typescript module
+# Bower TypeScript Hello World
+
+Readme / install steps coming in future release
+
