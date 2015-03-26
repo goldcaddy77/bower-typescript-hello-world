@@ -1,1 +1,1 @@
-alert('Bower TypeScript hello world!');
+alert('Bower TypeScript hello world - updated!');
