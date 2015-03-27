@@ -1,17 +1,18 @@
 /*jslint node: true */ // allow 'require' global
 "use strict";
 
-// dependencies
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
   del = require('del'),
-  gulpFilter = require('gulp-filter'),
-  gulpUtil = require('gulp-util'),
+  util = require('gulp-util'),
   es = require('event-stream'),
   inject = require('gulp-inject'),
-  ts = require('gulp-typescript');
+  ts = require('gulp-typescript'),
+  bump = require('gulp-bump'),
+  git = require('gulp-git'),
+  filter = require('gulp-filter'),
+  tag_version = require('gulp-tag-version');
 
-// paths
 var sources = {
   app: {
     ts: ['./src/**/*.ts'],
@@ -43,9 +44,9 @@ gulp.task('js:app', function() {
 gulp.task('clean', function() {
   del(['./dist'], function(err, deletedFiles) {
     if(deletedFiles.length) {
-      gulpUtil.log('Deleted', gulpUtil.colors.red(deletedFiles.join(' ,')) );
+      util.log('Deleted', util.colors.red(deletedFiles.join(' ,')) );
     } else {
-      gulpUtil.log(gulpUtil.colors.yellow('/dist directory empty - nothing to delete'));
+      util.log(util.colors.yellow('/dist directory empty - nothing to delete'));
     }
   });
 });
@@ -53,6 +54,16 @@ gulp.task('clean', function() {
 gulp.task('build', [
   'js:app'
 ]);
+
+gulp.task('bump', function() {
+
+  return gulp.src(['./package.json', './bower.json'])
+      .pipe(bump({type: 'patch'}))
+      .pipe(gulp.dest('./'))
+      .pipe(git.commit('bump patch version'))
+      .pipe(filter('package.json'))  // read package.json for the new version
+      .pipe(tag_version());          // create tag
+});
 
 // watch scripts, styles, and templates
 gulp.task('watch', function() {
