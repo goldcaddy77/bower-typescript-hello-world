@@ -4,6 +4,6 @@
   "main": "index.html",
   "private": true,
   "dependencies": {
-    "bower-typescript-hello-world": "0.0.2"
+    "bower-typescript-hello-world": "~0.0.2"
   }
 }

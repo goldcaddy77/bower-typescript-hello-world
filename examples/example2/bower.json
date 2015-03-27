@@ -1,9 +1,0 @@
-{
-  "name": "test",
-  "description": "testing our component",
-  "main": "index.html",
-  "private": true,
-  "dependencies": {
-    "bower-typescript-hello-world": "0.0.1"
-  }
-}

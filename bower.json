@@ -18,11 +18,11 @@
   "ignore": [
     "bower_components",
     "node_modules",
+    "example",
     "src",
     ".gitignore",
     ".jshintrc",
     "bower.json",
-    "example",
     "gulpfile.js",
     "package.json"
   ]
