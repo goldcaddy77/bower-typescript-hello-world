@@ -1,7 +1,7 @@
 {
   "name": "bower-typescript-hello-world",
   "description": "Example application for how to set up a Bower module using Gulp and TypeScript",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "author": "Dan Caddigan",
   "devDependencies": {
