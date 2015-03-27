@@ -17,6 +17,7 @@
     "gulp-tag-version": "^1.2.1",
     "gulp-typescript": "~2.4.2",
     "gulp-util": "~3.0.3",
+    "inquirer": "~0.8.2",
     "requirejs": "~2.1.16",
     "typescript": "~1.4.1"
   }

@@ -11,7 +11,8 @@ var gulp = require('gulp'),
   bump = require('gulp-bump'),
   git = require('gulp-git'),
   filter = require('gulp-filter'),
-  tag_version = require('gulp-tag-version');
+  tag_version = require('gulp-tag-version'),
+  inquirer = require("inquirer");
 
 var sources = {
   app: {
@@ -39,7 +40,6 @@ gulp.task('js:app', function() {
   );
 });
 
-
 // deletes the dist folder for a clean build
 gulp.task('clean', function() {
   del(['./dist'], function(err, deletedFiles) {
@@ -57,12 +57,26 @@ gulp.task('build', [
 
 gulp.task('bump', function() {
 
-  return gulp.src(['./package.json', './bower.json'])
-      .pipe(bump({type: 'patch'}))
-      .pipe(gulp.dest('./'))
-      .pipe(git.commit('bump patch version'))
-      .pipe(filter('package.json'))  // read package.json for the new version
-      .pipe(tag_version());          // create tag
+  var questions = [
+    {
+      type: "input",
+      name: "bump",
+      message: "Are you sure you want to bump the patch version? [Y/N]"
+    }
+  ];
+
+  inquirer.prompt( questions, function( answers ) {
+    if(answers.bump == "Y") {
+
+      return gulp.src(['./package.json', './bower.json'])
+          .pipe(bump({type: 'patch'}))
+          .pipe(gulp.dest('./'))
+          .pipe(git.commit('bump patch version'))
+          .pipe(filter('package.json'))  // read package.json for the new version
+          .pipe(tag_version());          // create tag
+
+    }
+  });
 });
 
 // watch scripts, styles, and templates
