@@ -1,18 +1,17 @@
 /*jslint node: true */ // allow 'require' global
-"use strict";
+'use strict';
 
 var gulp = require('gulp'),
   concat = require('gulp-concat'),
   del = require('del'),
   util = require('gulp-util'),
   es = require('event-stream'),
-  inject = require('gulp-inject'),
   ts = require('gulp-typescript'),
   bump = require('gulp-bump'),
   git = require('gulp-git'),
   filter = require('gulp-filter'),
-  tag_version = require('gulp-tag-version'),
-  inquirer = require("inquirer");
+  tagVersion = require('gulp-tag-version'),
+  inquirer = require('inquirer');
 
 var sources = {
   app: {
@@ -59,21 +58,21 @@ gulp.task('bump', function() {
 
   var questions = [
     {
-      type: "input",
-      name: "bump",
-      message: "Are you sure you want to bump the patch version? [Y/N]"
+      type: 'input',
+      name: 'bump',
+      message: 'Are you sure you want to bump the patch version? [Y/N]'
     }
   ];
 
   inquirer.prompt( questions, function( answers ) {
-    if(answers.bump == "Y") {
+    if(answers.bump === 'Y') {
 
       return gulp.src(['./package.json', './bower.json'])
           .pipe(bump({type: 'patch'}))
           .pipe(gulp.dest('./'))
           .pipe(git.commit('bump patch version'))
           .pipe(filter('package.json'))  // read package.json for the new version
-          .pipe(tag_version());          // create tag
+          .pipe(tagVersion());           // create tag
 
     }
   });

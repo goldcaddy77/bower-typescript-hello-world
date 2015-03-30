@@ -2,8 +2,14 @@
   "name": "bower-typescript-hello-world",
   "description": "Example application for how to set up a Bower module using Gulp and TypeScript",
   "version": "0.0.4",
-  "private": true,
-  "author": "Dan Caddigan",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "repository": "goldcaddy77/bower-typescript-hello-world",
+  "author": {
+    "name": "Dan Caddigan",
+    "email": "goldcaddy77@gmail.com",
+    "url": "https://github.com/goldcaddy77"
+  },
   "devDependencies": {
     "bower": "~1.3.12",
     "del": "~1.1.0",

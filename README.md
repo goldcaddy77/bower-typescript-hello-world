@@ -1,8 +1,34 @@
 # Bower TypeScript Hello World
 
-Readme / install steps coming in future release
+Scaffolding for Bower modules using TypeScript and Gulp.  This project contains:
 
-Todo: give good descriptions to examples
-1) Development mode w/ relative path
-2) Test initial version 0.0.1
-3) Test updated version 0.0.2
+* Standard directory structure for building JS modules
+* TypeScript support using `gulp-typescript` module
+* Watchers to recompile your files on save
+* A gulp task to automatically increment your patch release version
+
+
+## Installation
+
+Install global npm dependencies:
+
+        npm install -g gulp bower
+
+Install node packages:
+
+        npm install
+
+Install Bower packages:
+
+        bower install
+
+
+## Bumping Your Bower Version
+
+     gulp bump
+     git push origin master --tags
+
+## Bower Registration
+
+... TODO ...
+

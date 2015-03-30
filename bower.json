@@ -2,6 +2,7 @@
   "name": "bower-typescript-hello-world",
   "description": "A scaffold for creating Bower components with TypeScript and Gulp",
   "version": "0.0.4",
+  "license": "MIT",
   "authors": [
     "Dan Caddigan <goldcaddy77@gmail.com>"
   ],
@@ -14,7 +15,6 @@
     "typescript",
     "gulp"
   ],
-  "license": "MIT",
   "ignore": [
     "bower_components",
     "node_modules",
