@@ -23,12 +23,18 @@ Install Bower packages:
         bower install
 
 
+## Running tests
+
+To run the test suite:
+
+        ./node_modules/karma/bin/karma start
+
 ## Bumping Your Bower Version
 
+Tell gulp to bump the version number and create a new git tag for the version:
+  
      gulp bump
+
+Then push it up to Git:
+
      git push origin master --tags
-
-## Bower Registration
-
-... TODO ...
-
