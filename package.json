@@ -10,6 +10,7 @@
     "email": "goldcaddy77@gmail.com",
     "url": "https://github.com/goldcaddy77"
   },
+  "dependencies": {},
   "devDependencies": {
     "bower": "~1.3.12",
     "del": "~1.1.0",
@@ -24,7 +25,13 @@
     "gulp-typescript": "~2.4.2",
     "gulp-util": "~3.0.3",
     "inquirer": "~0.8.2",
-    "requirejs": "~2.1.16",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1",
+    "karma-typescript-preprocessor": "git://github.com/wanthony/karma-typescript-preprocessor",
+    "requirejs": "^2.1.17",
+    "tsd": "^0.5.7",
     "typescript": "~1.4.1"
   }
 }
