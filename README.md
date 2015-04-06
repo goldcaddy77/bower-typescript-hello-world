@@ -22,7 +22,6 @@ Install Bower packages:
 
         bower install
 
-
 ## Running tests
 
 To run the test suite:
