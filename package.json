@@ -1,7 +1,7 @@
 {
   "name": "bower-typescript-hello-world",
   "description": "Example application for how to set up a Bower module using Gulp and TypeScript",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "main": "dist/main.js",
   "repository": "goldcaddy77/bower-typescript-hello-world",
